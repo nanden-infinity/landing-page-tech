@@ -1,0 +1,16 @@
+:root {
+
+  /* FONTS */
+  --fontDefault: "Plus Jakarta Sans", sans-serif;
+  --fontDescription: "Lato", sans-serif;
+  --btn--color-primary: #f42e1b;
+  --btn--colorPHover: #db1502;
+  --btn--colorPHover2: #f62915;
+  --amber--color: #f19e18;
+  --amber--colorHover: #f5bb5d;
+  --defaultColor: rgba(255, 255, 255, 0.97);
+  --box-shadowDefault: 0 12px 32px rgba(0, 0, 0, 0.06),
+    0 -4px 32px rgba(0, 0, 0, 0.01) inset,
+    0 12px 32px rgba(0, 0, 0, 0.01),
+    0 12px 32px rgba(0, 0, 0, 0.06);
+}

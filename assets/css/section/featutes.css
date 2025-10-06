@@ -1,0 +1,23 @@
+.features{
+  padding-block: 1rem;
+}
+.subHeadding{
+  text-align: center;
+  color: #f27108;
+  margin-bottom: 2rem;
+}
+.patrocinadores {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin: 0 auto !important;
+background-color: #d8d4cd80;
+  padding: 2rem 4rem;
+  font-family: var(--fontDescription);
+  font-weight: bold;
+  color: #444;
+}
+
+.patrocinadores span {
+  font-size: 2rem;
+}

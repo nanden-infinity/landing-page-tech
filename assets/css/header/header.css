@@ -1,0 +1,56 @@
+header {
+  box-shadow: var(--box-shadowDefault);
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.97);
+}
+
+.container--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--defaultColor);
+  filter: blur(0);
+  padding: 2rem 5%;
+  backdrop-filter: blur(10px);
+}
+
+/* logo header */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Nav bar  */
+.nav-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.list--menu {
+  display: flex;
+  gap: 4rem;
+  width: 80%;
+
+}
+
+/* UL list--menu */
+
+
+
+/* LI LIST NAV BAR */
+ .link--nav {
+  color: #333;
+  font-family: var(--fontDefault);
+  line-height: 1;
+  letter-spacing: .2px;
+  display: inline-block;
+  padding: 1.5rem;
+}
+
+.button--show__Menu {
+  display: none;
+}

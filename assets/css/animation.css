@@ -1,0 +1,21 @@
+/* @keyframes bannerImag {
+  80% {
+    opacity: .1;
+    transform: translate3d(-10px, 0, 0);
+    background: url("/assets/images/imag--banner.jpg");
+    transition: all .5s;
+    height: 0;
+    width: 0;
+    transform-origin: left;
+    z-index: -1;
+  }
+
+  to {
+    opacity: .2;
+    transform: translate3d(0, 0, 0);
+    background-size: cover;
+    background: url("/assets/images/imag--banner2.jpg");
+    height: 100%;
+    z-index: -1;
+  }
+} */

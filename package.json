@@ -1,0 +1,21 @@
+{
+  "name": "carda--users",
+  "version": "1.0.0",
+  "description": "project card using boostrap",
+  "main": "scripit.js",
+  "scripts": {
+    "dev": "scripit.js --watch",
+    "produson": "npx pm2 start script.js --name project --watch"
+  },
+  "author": "nanden-infinity",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "scrollreveal": "^4.0.9"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "loader": "^2.1.1",
+    "pm2": "^6.0.13"
+  }
+}
