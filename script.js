@@ -1,5 +1,7 @@
 // Iniciando no script para landing page com todos as atualizacao ate a ultima versao
 const buttonShowMenu = document.querySelector(".button--show__Menu");
+const header = document.querySelector("header")
+const heroSection = document.querySelector('.banner');
 
 //  Fazendo loop nos eventos exibindo com satrt touchStart
 const events = ["click", "touchstart"].forEach((eventTouch) =>
@@ -10,8 +12,8 @@ function openMenu() {
   const navBar = document.querySelector("nav.nav-bar__menu");
   console.log(navBar);
   navBar.classList.toggle("open--menu");
-  navBar.children[0].classList.toggle("show-menu")
- console.log(navBar)
+  navBar.children[0].classList.toggle("show-menu");
+  console.log(navBar);
 }
 
 const initMenu = () => {
@@ -32,3 +34,40 @@ const appendForm = () => {
     <input type="text" name="email" id="email" placeholder="insert your email ">
     </form>`;
 };
+
+const allLinks = document.querySelectorAll("nav ul a");
+
+allLinks.forEach((link) => {
+  link.addEventListener("click", goToSection);
+});
+
+function goToSection(event) {
+  event.preventDefault();
+  const target = event.target;
+  const id = target.getAttribute("href").slice(1);
+  const section = document.getElementById(id);
+  console.log(section)
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}
+
+const oberva = new IntersectionObserver(
+  (entry) => {
+    const isVisible = entry[0].isIntersecting;
+    if (!isVisible) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  },
+  {
+    root: null,
+    rootMargin: "-180px",
+    threshold: null
+  }
+);
+
+
+oberva.observe(heroSection)
