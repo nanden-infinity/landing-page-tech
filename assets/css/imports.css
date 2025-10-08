@@ -4,6 +4,7 @@
 @import url(header/header.css);
 @import url(componets/components.css);
 @import url(section/sectionHero.css);
+@import url(section/section--banner.css);
 @import url(section/featutes.css);
 @import url(class.css);
 @import url(animation.css);

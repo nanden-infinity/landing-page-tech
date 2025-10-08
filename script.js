@@ -1,7 +1,7 @@
 // Iniciando no script para landing page com todos as atualizacao ate a ultima versao
 const buttonShowMenu = document.querySelector(".button--show__Menu");
-const header = document.querySelector("header")
-const heroSection = document.querySelector('.banner');
+const header = document.querySelector("header");
+const heroSection = document.querySelector(".banner");
 
 //  Fazendo loop nos eventos exibindo com satrt touchStart
 const events = ["click", "touchstart"].forEach((eventTouch) =>
@@ -46,7 +46,7 @@ function goToSection(event) {
   const target = event.target;
   const id = target.getAttribute("href").slice(1);
   const section = document.getElementById(id);
-  console.log(section)
+  console.log(section);
   section.scrollIntoView({
     behavior: "smooth",
     block: "start",
@@ -58,54 +58,50 @@ const oberva = new IntersectionObserver(
     const isVisible = entry[0].isIntersecting;
     if (!isVisible) {
       document.body.classList.add("sticky");
-    } if(isVisible) {
+    }
+    if (isVisible) {
       document.body.classList.remove("sticky");
     }
   },
   {
     root: null,
     rootMargin: "-140px",
-    threshold: null
+    threshold: null,
   }
 );
 
-
-oberva.observe(heroSection)
-
+oberva.observe(heroSection);
 
 const mutation = new MutationObserver((mutations) => {
   console.log(mutations);
 });
 
 mutation.observe(heroSection, {
-  attributes: true,      // observa mudanças em atributos
-  childList: true,       // observa adição/remoção de filhos
-  subtree: true          // observa dentro dos elementos filhos também
+  attributes: true, // observa mudanças em atributos
+  childList: true, // observa adição/remoção de filhos
+  subtree: true, // observa dentro dos elementos filhos também
 });
 
+function scrollPage() {
+  const section = document.querySelectorAll("section");
 
+  const windowMetada = window.innerHeight * 0.6;
+  section.forEach((el) => {
+    const sectionTop = Math.floor(el.getBoundingClientRect().top);
+    const isSectionVisible = sectionTop - windowMetada < 0;
 
-function scrollPage(){
-const section = document.querySelectorAll('section');
-
-const windowMetada = window.innerHeight * 0.6
-section.forEach((el)=> {
-  
-  const sectionTop = Math.floor( el.getBoundingClientRect().top)
-  const isSectionVisible = (sectionTop - windowMetada) < 0
-  
-  if(isSectionVisible){
-    el.classList.add("ativado")
-  } else{
-        el.classList.remove("ativado")
-
-  }
-})
+    if (isSectionVisible) {
+      el.classList.add("ativado");
+    } else {
+      el.classList.remove("ativado");
+    }
+  });
 }
 
-window.addEventListener("scroll",scrollPage)
 
+// Inicializando o evento do escroll assim que a pagina for carregado para mostrar alguma coisa na pagina
+window.addEventListener("scroll", scrollPage);
 
-document.addEventListener("DOMContentLoaded",scrollPage)
+document.addEventListener("DOMContentLoaded", scrollPage);
 
-scrollPage()
+scrollPage();
