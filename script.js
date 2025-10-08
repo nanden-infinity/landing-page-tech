@@ -57,17 +57,55 @@ const oberva = new IntersectionObserver(
   (entry) => {
     const isVisible = entry[0].isIntersecting;
     if (!isVisible) {
-      header.classList.add("sticky");
-    } else {
-      header.classList.remove("sticky");
+      document.body.classList.add("sticky");
+    } if(isVisible) {
+      document.body.classList.remove("sticky");
     }
   },
   {
     root: null,
-    rootMargin: "-180px",
+    rootMargin: "-140px",
     threshold: null
   }
 );
 
 
 oberva.observe(heroSection)
+
+
+const mutation = new MutationObserver((mutations) => {
+  console.log(mutations);
+});
+
+mutation.observe(heroSection, {
+  attributes: true,      // observa mudanças em atributos
+  childList: true,       // observa adição/remoção de filhos
+  subtree: true          // observa dentro dos elementos filhos também
+});
+
+
+
+function scrollPage(){
+const section = document.querySelectorAll('section');
+
+const windowMetada = window.innerHeight * 0.6
+section.forEach((el)=> {
+  
+  const sectionTop = Math.floor( el.getBoundingClientRect().top)
+  const isSectionVisible = (sectionTop - windowMetada) < 0
+  
+  if(isSectionVisible){
+    el.classList.add("ativado")
+  } else{
+        el.classList.remove("ativado")
+
+  }
+})
+}
+
+window.addEventListener("scroll",scrollPage)
+
+
+document.addEventListener("DOMContentLoaded",scrollPage)
+
+scrollPage()

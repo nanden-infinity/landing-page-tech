@@ -7,7 +7,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 5.5px;
-    height: 300px;
+    height: 340px;
     overflow: hidden;
   }
 
@@ -62,15 +62,15 @@
     z-index: -1;
     /* animation: bannerImag 3s linear 2s backwards; */
   }
-  
-   .picture--banner .img--banner {
+
+  .picture--banner .img--banner {
     max-width: 100%;
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
     border-radius: 5.5px;
-    
+
 
   }
 
@@ -87,20 +87,55 @@
 
   /* DEBUG */
 
-  section{
-    height: 100vh;
+  section {
+    height: max-content;
+    opacity: 0;
+    transition: .5s;
+   transform: translate3d(-90px,0,0);
+  }
+  section.ativado{
+    
+     opacity: 1;
+      transform: translate3d(0,0,0);
+
   }
 
 
-  header.sticky{
+  .sticky header {
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
+    z-index: 99999;
+    inset: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.94);
-    filter: blur();
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    /* 25% opaco, quase transparente */
     backdrop-filter: blur(40px);
+    /* leve desfoque do fundo */
+    -webkit-backdrop-filter: blur(12px);
+    /* compatibilidade com Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     transition: .5s all;
-    padding-block: 2rem;
+    padding-top: 0;
+    box-shadow: 0 1.5rem 3.4rem rgba(0, 0, 0, 0.09) !important;
+    padding-bottom: 0;
+    height: 8.75rem;
+    /* height: 140px; */
+    animation: slowli .5s;
   }
+
+  @keyframes slowli {
+    from {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+
+    to {
+      transform: scaleY(1);
+      opacity: 1;
+      background-color: #875009 !important;
+    }
+  }
+
+ 
